@@ -1,4 +1,4 @@
-{% set version = '0.3.0' %}
+{% set version = "0.3.29" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/salso_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/salso/salso_{{ version }}.tar.gz
-  sha256: 437de6d5978053ea6b42cb1042455b4f707bfabeb3d5d68801c9f0b216b4da16
+  sha256: a525bf3becf07dd3162e23b1dc05aaa52c56e19e47ad1f08a7f2cc43907a65dc
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -49,16 +49,11 @@ test:
 about:
   home: https://CRAN.R-project.org/package=salso
   license: MIT
-  summary: "The SALSO algorithm is an efficient randomized greedy search method to find a point
-    estimate for a random partition based on a loss function and posterior Monte Carlo
-    samples. The algorithm is implemented for many loss functions, including the Binder
-    loss and a generalization of the variation of information loss, both of which allow
-    for unequal weights on the two types of clustering mistakes. Efficient implementations
-    are also provided for Monte Carlo estimation of the posterior expected loss of a
-    given clustering estimate. See Dahl, Johnson, M\xFCller (2022) <doi:10.1080/10618600.2022.2069779>."
+  summary: The SALSO algorithm is an efficient randomized greedy search method to find a point estimate for a random partition based on a loss function and posterior Monte Carlo samples. The algorithm is implemented for many loss functions, including the Binder loss and a generalization of the variation of information loss,
+    both of which allow for unequal weights on the two types of clustering mistakes. Efficient implementations are also provided for Monte Carlo estimation of the posterior expected loss of a given clustering estimate. See Dahl, Johnson, Müller (2022) <doi:10.1080/10618600.2022.2069779>.
   license_family: MIT
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
     - LICENSE
 
 extra:
