@@ -1,4 +1,4 @@
-{% set version = "0.3.29" %}
+{% set version = "0.3.35" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/salso_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/salso/salso_{{ version }}.tar.gz
-  sha256: a525bf3becf07dd3162e23b1dc05aaa52c56e19e47ad1f08a7f2cc43907a65dc
+  sha256: 7d898877ba27659d13195b827355b2690f07575335bc898a5464305a2ca3fac9
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   skip: true  # [win or r_base=="4.1"]
   rpaths:
     - lib/R/lib/
