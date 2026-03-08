@@ -1,4 +1,4 @@
-{% set version = "0.3.57" %}
+{% set version = "0.3.69" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/salso_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/salso/salso_{{ version }}.tar.gz
-  sha256: 7aa163ca067780f90d5a5b78fa6f5da39dd1cb60c05c9daf6b1e56b249d7feb0
+  sha256: 1483f8c000a70937227814a7d1e96194a279e00753f675fcf96dcc3f658d26b2
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win or r_base=="4.1"]
   rpaths:
     - lib/R/lib/
@@ -49,8 +49,8 @@ test:
 about:
   home: https://CRAN.R-project.org/package=salso
   license: MIT
-  summary: The SALSO algorithm is an efficient randomized greedy search method to find a point estimate for a random partition based on a loss function and posterior Monte Carlo samples. The algorithm is implemented for many loss functions, including the Binder loss and a generalization of the variation of information loss,
-    both of which allow for unequal weights on the two types of clustering mistakes. Efficient implementations are also provided for Monte Carlo estimation of the posterior expected loss of a given clustering estimate. See Dahl, Johnson, Müller (2022) <doi:10.1080/10618600.2022.2069779>.
+  summary: The SALSO algorithm is an efficient randomized greedy search method to find a point estimate for a random partition based on a loss function and posterior Monte Carlo samples. The algorithm is implemented for many loss functions, including the Binder loss and a generalization of the variation of information 
+    loss, both of which allow for unequal weights on the two types of clustering mistakes. Efficient implementations are also provided for Monte Carlo estimation of the posterior expected loss of a given clustering estimate. See Dahl, Johnson, Müller (2022) <doi:10.1080/10618600.2022.2069779>.
   license_family: MIT
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
